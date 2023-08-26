@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour
 
     public void SetPattern(ITurretStrategy strategy)
     {
+        if(strategy.GetType() == _strategy?.GetType()) return;
         _strategy?.StopMove();
         _strategy = strategy;
         _strategy.StartMove();
