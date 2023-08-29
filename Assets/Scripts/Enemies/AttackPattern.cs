@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class AttackPattern : ITurretStrategy
@@ -14,15 +15,21 @@ public class AttackPattern : ITurretStrategy
         _target = target;
         _timeDelay = timeDelay;
     }
-
-    public void StartMove() => _canMove = true;
-    public void StopMove() => _canMove = false;
-
+    public async Task StartMove()
+    {
+        await Task.Delay(2000);
+        _canMove = true;
+    }
+    public async Task StopMove()
+    {
+        await Task.Delay(2000);
+        _canMove = false;
+    }
     public void Update(float deltaTime)
     {
         Shoot();
     }
-     
+
     private void Shoot()
     {
         _timer += Time.deltaTime;
@@ -31,6 +38,6 @@ public class AttackPattern : ITurretStrategy
         {
             _timer = 0;
             Debug.Log("Shot");
-        }                   
+        }
     }
 }

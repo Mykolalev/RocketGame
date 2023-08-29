@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class IdlePattern : ITurretStrategy
@@ -8,7 +9,7 @@ public class IdlePattern : ITurretStrategy
     private float _timer;
     private float _timeDelay;
     private float _maxRotationX = 5;
-    private float _minRotationX= -90;
+    private float _minRotationX = -90;
 
     public IdlePattern(Transform transform, float speed, float timeDelay)
     {
@@ -17,18 +18,29 @@ public class IdlePattern : ITurretStrategy
         _timeDelay = timeDelay;
     }
 
-    public void StartMove() => _canMove = true;
-    public void StopMove() => _canMove = false; 
+    public async Task StartMove()
+    {
+        await Task.Delay(2000);
+        _canMove = true;
+    }
+    public async Task StopMove()
+    {
+        await Task.Delay(2000);
+        _canMove = false;
+    }
 
     public void Update(float deltaTime)
     {
         _timer += deltaTime;
         if (_timer >= _timeDelay)
         {
-            _timer = 0;
-            Vector3 newRotation = SwitchTargetRotation();
             Debug.Log("Im changing pos");
-            _transform.Rotate(newRotation * _speed * deltaTime);
+            Vector3 newRotation = SwitchTargetRotation();
+            Quaternion targetRotation = Quaternion.Euler(newRotation);
+            Quaternion newQuaternion = Quaternion.Slerp(_transform.rotation, targetRotation, (_speed / _timeDelay) * deltaTime);
+            _transform.rotation = newQuaternion;
+            //_transform.Rotate(newRotation * _speed * deltaTime);
+            _timer = 0;
         }
     }
 
@@ -38,3 +50,4 @@ public class IdlePattern : ITurretStrategy
         return newRotation;
     }
 }
+

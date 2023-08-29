@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class Turret : MonoBehaviour
 {
@@ -6,10 +7,13 @@ public class Turret : MonoBehaviour
 
     private void Update() => _strategy?.Update(Time.deltaTime);
 
-    public void SetPattern(ITurretStrategy strategy)
+    public async Task SetPattern(ITurretStrategy strategy)
     {
-        _strategy?.StopMove();
+        if (strategy.GetType() == _strategy?.GetType())
+            return;
+
+        await _strategy?.StopMove();
         _strategy = strategy;
-        _strategy.StartMove();
+        await _strategy.StartMove();
     }
 }
