@@ -29,7 +29,6 @@ public class TurretController : MonoBehaviour
                 foundRocket = true;
             }
         }
-
         if (!foundRocket)
             _turret.SetPattern(new IdlePattern(_turret.transform, _speed, _timeDelay));
     }

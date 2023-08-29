@@ -298,7 +298,6 @@ GameObject:
   - component: {fileID: 555184409913044544}
   - component: {fileID: 655636992}
   - component: {fileID: 1427179771}
-  - component: {fileID: 1243147670}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Player
@@ -528,20 +527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rocketFuel: {fileID: 137025809}
   _consumption: -1
---- !u!136 &1243147670
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555184409913044559}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.84839904
-  m_Height: 3.7387323
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.03486395, z: 0}
 --- !u!1 &2547676744430198387
 GameObject:
   m_ObjectHideFlags: 0

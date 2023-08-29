@@ -1,6 +1,8 @@
+using System.Threading.Tasks;
+
 public interface ITurretStrategy
 {
-    void StartMove();
-    void StopMove();
+    Task StartMove();
+    Task StopMove();
     void Update(float deltaTime);
 }
