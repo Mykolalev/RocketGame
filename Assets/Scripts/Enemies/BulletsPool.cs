@@ -4,7 +4,7 @@ using UnityEngine;
 public class BulletsPool : MonoBehaviour
 {
     [SerializeField] private Bullet _bulletPrefab;
-    private List<Bullet> _bulletsPool = new List<Bullet>();
+    private readonly List<Bullet> _bulletsPool = new List<Bullet>();
 
     public Bullet GetBullet()
     {

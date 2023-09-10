@@ -10,7 +10,12 @@ public class Bullet : Obstacle
 
     private void Start()
     {
-        Invoke(nameof(Destroyed), 2f);
+        Invoke(nameof(InvokeAction), 2f);
+    }
+
+    void FixedUpdate()
+    {
+        transform.position += transform.forward * _speed;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -19,8 +24,8 @@ public class Bullet : Obstacle
         Destroyed?.Invoke(this);
     }
 
-    void FixedUpdate()
+    private void InvokeAction()
     {
-        transform.position += transform.forward * _speed;
+        Destroyed?.Invoke(this);
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AttackPattern : ITurretStrategy
 {
+    private AudioClip _shootingSound;
     private BulletsPool _pool;
     private Transform _muzzle;
-    private GameObject _prefab;
     private GameObject _flashEffect;
     private Transform _transform;
     private Transform _target;
@@ -16,15 +16,15 @@ public class AttackPattern : ITurretStrategy
 
     private float _duration = 0.4f;
 
-    public AttackPattern(Transform transform, Transform target, float timeDelay, Transform muzzle, GameObject prefab, GameObject flashEffect, BulletsPool pool)
+    public AttackPattern(Transform transform, Transform target, float timeDelay, Transform muzzle, GameObject flashEffect, BulletsPool pool, AudioClip shootingSound)
     {
         _transform = transform;
         _target = target;
         _timeDelay = timeDelay;
         _muzzle = muzzle;
-        _prefab = prefab;
         _flashEffect = flashEffect;
         _pool = pool;
+        _shootingSound = shootingSound;
     }
 
     public async Task StartMove()
