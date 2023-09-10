@@ -1,35 +1,37 @@
-using Assets.Scripts;
 using UnityEngine;
 
-public class RocketFuel : MonoBehaviour, IFuelable
+namespace Assets.Scripts
 {
-    [SerializeField] private int _maxFuel;
-    [SerializeField] private RocketFuelBar _bar;
-    private int _currentFuel;
-
-    private void Start()
+    public class RocketFuel : MonoBehaviour, IFuelable
     {
-        CurrentFuel = _maxFuel;
-    }
+        [SerializeField] private int _maxFuel;
+        [SerializeField] private RocketFuelBar _bar;
+        private int _currentFuel;
 
-    public int CurrentFuel
-    {
-        get => _currentFuel;
-        set
+        private void Start()
         {
-            if(value > _maxFuel)
-            {
-                _currentFuel = _maxFuel;
-            }
-            
-            _currentFuel = value;
-            _bar.SetFuel(_currentFuel);
+            CurrentFuel = _maxFuel;
         }
-    }
 
-    public void FuelInteraction(int fuel)
-    {
-        if (CurrentFuel <= 0) { CurrentFuel = 0; }
-        CurrentFuel += fuel;
+        public int CurrentFuel
+        {
+            get => _currentFuel;
+            set
+            {
+                if (value > _maxFuel)
+                {
+                    _currentFuel = _maxFuel;
+                }
+
+                _currentFuel = value;
+                _bar.SetFuel(_currentFuel);
+            }
+        }
+
+        public void FuelInteraction(int fuel)
+        {
+            if (CurrentFuel <= 0) { CurrentFuel = 0; }
+            CurrentFuel += fuel;
+        }
     }
 }
