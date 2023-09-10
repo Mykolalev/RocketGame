@@ -1,24 +1,26 @@
+using System;
 using UnityEngine;
 
 public class Bullet : Obstacle
 {
     [SerializeField] private float _speed;
-    [SerializeField] private GameObject _explosionEffect; 
+    [SerializeField] private GameObject _explosionEffect;
+
+    public event Action<Bullet> Destroyed;
 
     private void Start()
     {
-        Destroy(gameObject, 2f);
+        Invoke(nameof(Destroyed), 2f);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         GameObject explosion = Instantiate(_explosionEffect, transform.position, Quaternion.Euler(-transform.forward));
-        Destroy(gameObject);
+        Destroyed?.Invoke(this);
     }
 
     void FixedUpdate()
     {
         transform.position += transform.forward * _speed;
     }
-
 }

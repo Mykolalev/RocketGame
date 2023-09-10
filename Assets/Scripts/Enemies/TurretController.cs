@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
+    [SerializeField] private BulletsPool _bulletsPool;
     [SerializeField] private GameObject _flashEffect;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _muzzle;
@@ -28,7 +29,7 @@ public class TurretController : MonoBehaviour
         {
             if (collider.TryGetComponent(out RocketThrust rocket))
             {
-                _turret.SetPattern(new AttackPattern(_turret.transform, rocket.transform, _timeDelay, _muzzle, _bulletPrefab, _flashEffect));
+                _turret.SetPattern(new AttackPattern(_turret.transform, rocket.transform, _timeDelay, _muzzle, _bulletPrefab, _flashEffect, _bulletsPool));
                 foundRocket = true;
             }
         }

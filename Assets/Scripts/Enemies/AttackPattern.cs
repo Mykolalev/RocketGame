@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackPattern : ITurretStrategy
 {
+    private BulletsPool _pool;
     private Transform _muzzle;
     private GameObject _prefab;
     private GameObject _flashEffect;
@@ -15,7 +16,7 @@ public class AttackPattern : ITurretStrategy
 
     private float _duration = 0.4f;
 
-    public AttackPattern(Transform transform, Transform target, float timeDelay, Transform muzzle, GameObject prefab, GameObject flashEffect)
+    public AttackPattern(Transform transform, Transform target, float timeDelay, Transform muzzle, GameObject prefab, GameObject flashEffect, BulletsPool pool)
     {
         _transform = transform;
         _target = target;
@@ -23,6 +24,7 @@ public class AttackPattern : ITurretStrategy
         _muzzle = muzzle;
         _prefab = prefab;
         _flashEffect = flashEffect;
+        _pool = pool;
     }
 
     public async Task StartMove()
@@ -63,16 +65,17 @@ public class AttackPattern : ITurretStrategy
     {
         _timer += Time.deltaTime;
         _transform.LookAt(_target);
+
         if (_timer >= _timeDelay)
         {
             _timer = 0;
             Debug.Log("Shot");
+            Bullet bullet = _pool.GetBullet();
+            bullet.transform.position = _muzzle.position;
+            bullet.transform.rotation = _muzzle.rotation;
             GameObject flashEffect = UnityEngine.Object.Instantiate(_flashEffect);
             flashEffect.transform.rotation = _muzzle.transform.rotation;
             flashEffect.transform.position = _muzzle.transform.position;
-            GameObject bullet = UnityEngine.Object.Instantiate(_prefab);
-            bullet.transform.position = _muzzle.transform.position;
-            bullet.transform.rotation = _muzzle.rotation;
         }
     }
 }
