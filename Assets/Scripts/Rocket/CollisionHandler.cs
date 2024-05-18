@@ -26,11 +26,18 @@ public class CollisionHandler : MonoBehaviour
         {
             _gotHit = true;
             winable.Win(Finished, transform);
+            DisableMovement();
         }
         else if (collision.collider.TryGetComponent<IDeadable>(out var deadable))
         {
             _gotHit = true;
             deadable.Dead(Dead, transform);
+            DisableMovement();
         }
+    }
+
+    private void DisableMovement()
+    {
+        transform.GetComponent<Movement>().enabled = false;
     }
 }
