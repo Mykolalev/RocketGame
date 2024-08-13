@@ -1,12 +1,11 @@
-using Assets.Scripts;
 using UnityEngine;
 
 public class FuelConsumption : MonoBehaviour
 {
-    [SerializeField] private RocketFuel _rocketFuel;
+    [SerializeField] private RocketFuelModel _rocketFuel;
     [SerializeField] private int _consumption;
 
-    private AudioSource _audioSource; 
+    private AudioSource _audioSource;
     private Movement _movement;
     private bool _canConsumFuel = false;
 
@@ -28,8 +27,10 @@ public class FuelConsumption : MonoBehaviour
 
     private void FuelConsumCheck()
     {
-        if (_movement.CanPush == true) { _canConsumFuel = true; }
-        else if (_movement.CanPush == false) { _canConsumFuel = false; }
+        if (_movement.CanPush == true)
+            _canConsumFuel = true;
+        else if (_movement.CanPush == false)
+            _canConsumFuel = false;
     }
 
     private void CunsumFuel()
@@ -37,12 +38,11 @@ public class FuelConsumption : MonoBehaviour
         if (_canConsumFuel == true)
         {
             _rocketFuel.FuelInteraction(_consumption);
-            //Debug.Log(_rocketFuel.CurrentFuel);
             if (_rocketFuel.CurrentFuel <= 0)
             {
-                _audioSource.Stop(); 
+                _audioSource.Stop();
                 _movement.CanPush = false;
-                _movement.enabled = false; 
+                _movement.enabled = false;
             }
             else
             {
@@ -50,6 +50,4 @@ public class FuelConsumption : MonoBehaviour
             }
         }
     }
-
-
 }

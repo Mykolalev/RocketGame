@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 1907017266764225086}
   - component: {fileID: 4973134429053883381}
   - component: {fileID: 1777563119}
-  - component: {fileID: 8477054470149262102}
   m_Layer: 0
   m_Name: LandingPlace
   m_TagString: Finish
@@ -192,19 +191,6 @@ BoxCollider:
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1777563119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738773613325444720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec37d02c0ba71bb4aa7a62fc12d55a47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa, type: 3}
---- !u!114 &8477054470149262102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

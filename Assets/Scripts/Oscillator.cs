@@ -3,7 +3,7 @@ using UnityEngine;
 public class Oscillator : MonoBehaviour
 {
     [SerializeField] private Vector3 _movementVector;
-    [SerializeField] [Range(0,1)] private float _movementFactor;
+    [SerializeField, Range(0, 1)] private float _movementFactor;
     [SerializeField] private float _period = 2f;
     private const float TAU = Mathf.PI * 2;
     private Vector3 _startPosition;

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Button[] _levels;
+
+    private const string LevelsPrefsName = "Levels";
+
     public static LevelManager Instance;
     public int LevelUnlock;
 
@@ -22,7 +25,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        LevelUnlock = PlayerPrefs.GetInt("levels", 1);
+        LevelUnlock = PlayerPrefs.GetInt(LevelsPrefsName, 1);
 
         for (int i = 0; i < _levels.Length; i++)
         {

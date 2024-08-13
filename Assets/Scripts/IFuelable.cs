@@ -1,7 +1,7 @@
 ﻿namespace Assets.Scripts
 {
-    public interface IFuelable
+    public interface IFuelable 
     {
-        void FuelInteraction(int fuel); 
+        void FuelInteraction(int fuel);  
     }
 }

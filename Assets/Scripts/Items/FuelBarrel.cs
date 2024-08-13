@@ -2,16 +2,16 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class FuelBarrel : MonoBehaviour
+    public class FuelBarrel : Item
     {
         [SerializeField] private int _fuel;
 
-        private void OnTriggerEnter(Collider other)
+        protected override void OnTriggerEnter(Collider other)
         {
-            if(other.TryGetComponent<Movement>(out var movement))
+            if(other.TryGetComponent<IFuelable>(out var fuelComponent)) 
             {
-                movement.GetComponentInChildren<IFuelable>().FuelInteraction(_fuel);
-                Destroy(gameObject);
+                fuelComponent.FuelInteraction(_fuel);
+                gameObject.SetActive(false);         
             }
         }
     }

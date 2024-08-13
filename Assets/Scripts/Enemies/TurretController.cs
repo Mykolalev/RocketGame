@@ -3,6 +3,7 @@ using UnityEngine;
 public class TurretController : MonoBehaviour
 {
     [SerializeField] private AudioClip _shootingSound;
+    [SerializeField] private AudioSource _source;
     [SerializeField] private BulletsPool _bulletsPool;
     [SerializeField] private GameObject _flashEffect;
     [SerializeField] private Transform _muzzle;
@@ -29,7 +30,7 @@ public class TurretController : MonoBehaviour
         {
             if (collider.TryGetComponent(out RocketThrust rocket))
             {
-                _turret.SetPattern(new AttackPattern(_turret.transform, rocket.transform, _timeDelay, _muzzle, _flashEffect, _bulletsPool, _shootingSound));
+                _turret.SetPattern(new AttackPattern(_turret.transform, rocket.transform, _timeDelay, _muzzle, _flashEffect, _bulletsPool, _source, _shootingSound));
                 foundRocket = true;
             }
         }

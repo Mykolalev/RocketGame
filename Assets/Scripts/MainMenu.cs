@@ -3,9 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private const string LevelsPrefsName = "Levels";
     public void PlayGame()
     {
-        int level = PlayerPrefs.GetInt("levels");
+        int level = PlayerPrefs.GetInt(LevelsPrefsName);
         SceneManager.LoadScene(level);
     }
 

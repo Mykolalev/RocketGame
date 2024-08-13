@@ -18,13 +18,14 @@ public class BulletsPool : MonoBehaviour
         {
             bullet = Instantiate(_bulletPrefab);
         }
-        bullet.Destroyed += ReturnBullet;
+        bullet.Destroyed += ReturnBulletToPool;
+        bullet.Activate();
         return bullet;            
     }
 
-    private void ReturnBullet(Bullet bullet)
+    private void ReturnBulletToPool(Bullet bullet)
     {
-        bullet.Destroyed -= ReturnBullet;
+        bullet.Destroyed -= ReturnBulletToPool;
         _bulletsPool.Add(bullet);
     }
 }

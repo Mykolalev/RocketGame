@@ -2,19 +2,23 @@ using UnityEngine;
 
 public class PlaySound : MonoBehaviour
 {
+    [SerializeField] private AudioSource _mainAudioSource;
+    [SerializeField] private AudioSource _effectsAudioSource;
+
     [SerializeField] private AudioClip _thrustingClip;
     [SerializeField] private AudioClip _deathClip;
     [SerializeField] private AudioClip _winClip;
+    [SerializeField] private AudioClip _gotAnIClip;
+
     private CollisionHandler _collisionHandler;
-    private AudioSource _audioSource;
     private Movement _movement;
 
-    private void Start()
+    private void Start() 
     {
         _collisionHandler = GetComponent<CollisionHandler>();
         _collisionHandler.Dead += PlayDeathSound;
         _collisionHandler.Finished += PlayFinishedSound;
-        _audioSource = GetComponent<AudioSource>();
+        _collisionHandler.GotAnItem += OnGotAnItem;
         _movement = GetComponent<Movement>();
     }
 
@@ -25,28 +29,31 @@ public class PlaySound : MonoBehaviour
 
     private void PlayThurstSound()
     {
-        if (_movement.CanPush == true && !_audioSource.isPlaying)
+        if (_movement.CanPush == true && !_mainAudioSource.isPlaying)
         {
-            _audioSource.PlayOneShot(_thrustingClip);
+            _mainAudioSource.PlayOneShot(_thrustingClip);
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && _audioSource.isPlaying) //_movement.CanPush == false && _audioSource.isPlaying
+        else if (_movement.CanPush == false/*Input.GetKeyUp(KeyCode.Space)*/ && _mainAudioSource.isPlaying)
         {
-            _audioSource.Stop();
+            _mainAudioSource.Stop();
         }
     }
 
     private void PlayDeathSound()
     {
-        Debug.Log("DeathSound");
-        _audioSource.Stop();
-        _audioSource.PlayOneShot(_deathClip);
-
+        if (!_effectsAudioSource.isPlaying)
+            _effectsAudioSource.PlayOneShot(_deathClip);
     }
 
     private void PlayFinishedSound()
     {
-        Debug.Log("WinSound");
-        _audioSource.Stop();
-        _audioSource.PlayOneShot(_winClip);
+        if (!_effectsAudioSource.isPlaying)
+            _effectsAudioSource.PlayOneShot(_winClip);
+    }
+
+    private void OnGotAnItem()
+    {
+        if (!_effectsAudioSource.isPlaying)
+            _effectsAudioSource.PlayOneShot(_gotAnIClip);
     }
 }

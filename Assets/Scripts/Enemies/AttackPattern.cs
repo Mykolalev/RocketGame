@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackPattern : ITurretStrategy
 {
     private AudioClip _shootingSound;
+    private AudioSource _source;
     private BulletsPool _pool;
     private Transform _muzzle;
     private GameObject _flashEffect;
@@ -16,7 +17,7 @@ public class AttackPattern : ITurretStrategy
 
     private float _duration = 0.4f;
 
-    public AttackPattern(Transform transform, Transform target, float timeDelay, Transform muzzle, GameObject flashEffect, BulletsPool pool, AudioClip shootingSound)
+    public AttackPattern(Transform transform, Transform target, float timeDelay, Transform muzzle, GameObject flashEffect, BulletsPool pool, AudioSource source, AudioClip shootingSound)
     {
         _transform = transform;
         _target = target;
@@ -25,6 +26,7 @@ public class AttackPattern : ITurretStrategy
         _flashEffect = flashEffect;
         _pool = pool;
         _shootingSound = shootingSound;
+        _source = source;
     }
 
     public async Task StartMove()
@@ -69,13 +71,30 @@ public class AttackPattern : ITurretStrategy
         if (_timer >= _timeDelay)
         {
             _timer = 0;
-            Debug.Log("Shot");
-            Bullet bullet = _pool.GetBullet();
-            bullet.transform.position = _muzzle.position;
-            bullet.transform.rotation = _muzzle.rotation;
-            GameObject flashEffect = UnityEngine.Object.Instantiate(_flashEffect);
-            flashEffect.transform.rotation = _muzzle.transform.rotation;
-            flashEffect.transform.position = _muzzle.transform.position;
+            GetAndSetBullet();
+            PlaySound();
+            SpawnParticles();
         }
+    }
+
+    private void GetAndSetBullet()
+    {
+        Bullet bullet = _pool.GetBullet();
+        bullet.transform.position = _muzzle.position;
+        bullet.transform.rotation = _muzzle.rotation;
+        bullet.BulletFly(_muzzle);
+    }
+
+    private void SpawnParticles()
+    {
+        GameObject flashEffect = UnityEngine.Object.Instantiate(_flashEffect);
+        flashEffect.transform.rotation = _muzzle.transform.rotation;
+        flashEffect.transform.position = _muzzle.transform.position;
+    }
+
+    private void PlaySound()
+    {
+        //if(!_source.isPlaying)
+        _source.PlayOneShot(_shootingSound);
     }
 }

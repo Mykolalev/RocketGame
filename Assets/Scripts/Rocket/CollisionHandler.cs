@@ -1,38 +1,42 @@
+using Assets.Scripts;
 using System;
 using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem _crashParticles;
+    [SerializeField] private ParticleSystem _winParticles;
+    [SerializeField] private ParticleSystem _collectAnItemParticles;
+
     public event Action Dead;
     public event Action Finished;
-
-    private bool _gotHit = false;
-    private bool _cheatOn = false;
-
-    public bool CheatOn
+    public event Action GotAnItem; 
+     
+    private void OnCollisionEnter(Collision collision)
     {
-        get => _cheatOn;
-        set
+        if (collision.collider.GetComponent<Finish>())
         {
-            _cheatOn = value;
+            _winParticles.Play();
+            Finished?.Invoke();
+            DisableMovement();
+            LevelOpener.UnlockLevel();
+        }
+
+        if (collision.collider.GetComponent<Obstacle>())
+        {
+            _crashParticles.Play();
+            Dead?.Invoke();
+            DisableMovement();
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if ( _gotHit || _cheatOn) { return; }
-
-        if (collision.collider.TryGetComponent<IWinable>(out var winable))
+        if (other.GetComponent<Item>())
         {
-            _gotHit = true;
-            winable.Win(Finished, transform);
-            DisableMovement();
-        }
-        else if (collision.collider.TryGetComponent<IDeadable>(out var deadable))
-        {
-            _gotHit = true;
-            deadable.Dead(Dead, transform);
-            DisableMovement();
+            Debug.Log("Hit the barrel");
+            _collectAnItemParticles.Play();
+            GotAnItem?.Invoke();
         }
     }
 

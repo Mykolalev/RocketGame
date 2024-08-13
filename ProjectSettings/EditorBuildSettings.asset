@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ShortLevel.unity
     guid: 11d4bb03dfa2e1244a4c1b72989c687f
   - enabled: 1
-    path: Assets/Scenes/CurrentlyLastMenu.unity
+    path: Assets/Scenes/LastScene.unity
     guid: 90cf0fb43f7863647a553253d6a6905f
   m_configObjects: {}

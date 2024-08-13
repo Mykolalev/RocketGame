@@ -7,15 +7,15 @@ public class Cheat : MonoBehaviour
 
     private void Update()
     {
-        CheatOnAndOff();
+        //CheatOnAndOff();
         NextLevel();
     }
 
-    private void CheatOnAndOff()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-            _collisionHandler.CheatOn = !_collisionHandler.CheatOn;
-    }
+    //private void CheatOnAndOff()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.C))
+    //        _collisionHandler.Cheat = !_collisionHandler.Cheat;
+    //}
 
     private void NextLevel()
     {

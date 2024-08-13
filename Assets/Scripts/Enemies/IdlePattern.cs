@@ -35,7 +35,6 @@ public class IdlePattern : ITurretStrategy
         _timer += deltaTime * (_speed / 100f);
         if (_timer >= _timeDelay)
         {
-            Debug.Log("Im changing pos");
             _newRotation = SwitchTargetRotation();
             _timer = 0;
         }
