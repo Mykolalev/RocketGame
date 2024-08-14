@@ -6787,11 +6787,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a294d24ea404d44ba7507f9d3c1a555, type: 3}
---- !u!198 &1393547568 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1393547568, guid: 26d6b99efe14d5b48aeee39f56da1aa5, type: 3}
-  m_PrefabInstance: {fileID: 6112746708721830815}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1491853895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1212785189021362491, guid: 6a294d24ea404d44ba7507f9d3c1a555, type: 3}
@@ -7789,10 +7784,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1393547568, guid: 26d6b99efe14d5b48aeee39f56da1aa5, type: 3}
-      propertyPath: autoRandomSeed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6296432509586963992, guid: 26d6b99efe14d5b48aeee39f56da1aa5, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7841,10 +7832,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 8654767530817420698, guid: 26d6b99efe14d5b48aeee39f56da1aa5, type: 3}
-      propertyPath: _collectAnItemParticles
-      value: 
-      objectReference: {fileID: 1393547568}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d6b99efe14d5b48aeee39f56da1aa5, type: 3}
 --- !u!114 &6112746708721830816 stripped

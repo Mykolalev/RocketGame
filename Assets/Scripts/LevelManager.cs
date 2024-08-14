@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class LevelManager : MonoBehaviour
 {
@@ -38,8 +39,13 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void LoadLevel(int levelIndex)
+    public async Task LoadLevelAsync(int levelIndex) 
     {
-        SceneManager.LoadScene(levelIndex);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
+
+        while (!operation.isDone)
+        {
+            await Task.Yield();
+        }
     }
 }

@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1001 &128625444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,9 +151,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalScale.x
@@ -243,7 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1 &284745954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
@@ -261,7 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1 &357068682
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +290,9 @@ Transform:
   m_LocalPosition: {x: 434.00635, y: 69.28177, z: -0.41430664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1462735082}
+  - {fileID: 780739146}
+  - {fileID: 1922954663}
   - {fileID: 128625445}
   - {fileID: 1359176591}
   - {fileID: 403291524}
@@ -298,13 +302,10 @@ Transform:
   - {fileID: 1624991134}
   - {fileID: 1240373846}
   - {fileID: 1785747076}
-  - {fileID: 1462735082}
-  - {fileID: 780739146}
   - {fileID: 4109906841828637460}
   - {fileID: 1212785189609915041}
   - {fileID: 507688964}
   - {fileID: 1174977095}
-  - {fileID: 1922954663}
   - {fileID: 372444258}
   - {fileID: 1094360878}
   - {fileID: 3620472254592708696}
@@ -341,6 +342,7 @@ Transform:
   - {fileID: 2081607149}
   - {fileID: 3792213679191022718}
   - {fileID: 357068683}
+  - {fileID: 2019344991}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -362,7 +364,7 @@ GameObject:
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &372444255
 BoxCollider:
@@ -452,7 +454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1001 &403291523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,9 +465,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalScale.y
@@ -550,9 +555,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalScale.y
@@ -764,7 +773,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1 &635668089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
@@ -782,7 +790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117482383044068704, guid: f70d38ad5449fdf48b5f1e733bebc42f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9117482383044068704, guid: f70d38ad5449fdf48b5f1e733bebc42f, type: 3}
       propertyPath: m_LocalScale.z
@@ -1076,8 +1083,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingObstacle
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7949803730647097998, guid: f70d38ad5449fdf48b5f1e733bebc42f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f70d38ad5449fdf48b5f1e733bebc42f, type: 3}
 --- !u!4 &780739146 stripped
 Transform:
@@ -1101,7 +1107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1001 &1073959272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1113,9 +1118,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalScale.x
@@ -1176,6 +1185,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
   m_PrefabInstance: {fileID: 1073959272}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1086435987
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 365752732}
+    m_Modifications:
+    - target: {fileID: 1900575087, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: _fuel
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3573447975992212431, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_Name
+      value: barrel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 113.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 412.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1714.6313
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c58129985aeed3489b67c1336516026, type: 3}
 --- !u!1 &1087392546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
@@ -1193,7 +1263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1 &1094360874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,7 +1281,7 @@ GameObject:
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1094360875
 BoxCollider:
@@ -1302,7 +1371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1 &1150596574
 GameObject:
   m_ObjectHideFlags: 0
@@ -10953,7 +11021,7 @@ GameObject:
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1174977092
 BoxCollider:
@@ -11029,7 +11097,7 @@ Transform:
   m_LocalScale: {x: 3.0741, y: 23.83547, z: 20}
   m_Children: []
   m_Father: {fileID: 357068683}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1174977096
 MonoBehaviour:
@@ -11043,7 +11111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1001 &1232480694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11065,7 +11132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117482383044068704, guid: f70d38ad5449fdf48b5f1e733bebc42f, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9117482383044068704, guid: f70d38ad5449fdf48b5f1e733bebc42f, type: 3}
       propertyPath: m_LocalScale.x
@@ -11136,9 +11203,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11242,9 +11313,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalScale.x
@@ -11322,7 +11397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1 &1415897073
 GameObject:
   m_ObjectHideFlags: 0
@@ -11372,7 +11446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!4 &1462735082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9117482383044068704, guid: f70d38ad5449fdf48b5f1e733bebc42f, type: 3}
@@ -11395,7 +11468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1001 &1624991133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11407,9 +11479,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalScale.x
@@ -11487,7 +11563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1001 &1785747075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11499,9 +11574,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalScale.x
@@ -11577,7 +11656,7 @@ GameObject:
   - component: {fileID: 1922954664}
   - component: {fileID: 1922954665}
   m_Layer: 0
-  m_Name: Obstacle (5)
+  m_Name: MovingObstacle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11657,7 +11736,7 @@ Transform:
   m_LocalScale: {x: 1.3461484, y: 5.271259, z: 1.9656273}
   m_Children: []
   m_Father: {fileID: 357068683}
-  m_RootOrder: 15
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1922954664
 MonoBehaviour:
@@ -11671,7 +11750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!114 &1922954665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11698,9 +11776,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalScale.y
@@ -11875,6 +11957,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2019344991 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4241441613075374453, guid: 4c58129985aeed3489b67c1336516026, type: 3}
+  m_PrefabInstance: {fileID: 1086435987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2038350127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11886,9 +11973,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalScale.x
@@ -11966,7 +12057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1001 &2081607148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12044,9 +12134,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1212785189021362487, guid: 6a294d24ea404d44ba7507f9d3c1a555, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1212785189021362491, guid: 6a294d24ea404d44ba7507f9d3c1a555, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1212785189021362491, guid: 6a294d24ea404d44ba7507f9d3c1a555, type: 3}
       propertyPath: m_LocalScale.y
@@ -12365,9 +12459,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4109906840653246089, guid: f11d112ae0947274fa729c709fff7391, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4109906840653246093, guid: f11d112ae0947274fa729c709fff7391, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12442,7 +12540,7 @@ GameObject:
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &6070619673597794570
 MonoBehaviour:
@@ -12456,7 +12554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9c1d3c08615f43b72b43cf86b346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
 --- !u!1001 &7135207593738168478
 PrefabInstance:
   m_ObjectHideFlags: 0

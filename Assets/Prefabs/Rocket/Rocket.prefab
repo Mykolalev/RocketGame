@@ -947,7 +947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _crashParticles: {fileID: 8654301299960540213}
   _winParticles: {fileID: 8328764227362954187}
-  _collectAnItemParticles: {fileID: 0}
+  _collectAnItemParticles: {fileID: 1393547568}
 --- !u!114 &7479660723590416199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1563,6 +1563,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a93e02d9d0776b445a4ae2c19a953e64, type: 3}
+--- !u!198 &1393547568 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6390664074491398512, guid: a93e02d9d0776b445a4ae2c19a953e64, type: 3}
+  m_PrefabInstance: {fileID: 6390664073132298304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1393547566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6390664074491398510, guid: a93e02d9d0776b445a4ae2c19a953e64, type: 3}
