@@ -11,7 +11,6 @@ namespace Assets.Scripts
         {
             UpdateView();
             _model.FuelChanged += UpdateView;
-            Debug.Log("UpdateView subscription");
         }
 
         private void UpdateView() 

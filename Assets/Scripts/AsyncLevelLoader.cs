@@ -6,10 +6,11 @@ public class AsyncLevelLoader : MonoBehaviour
 {
     public async Task AsyncLoadLevel(string levelName)
     {
-        var operation = SceneManager.LoadSceneAsync(levelName);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
 
         while (!operation.isDone)
         {
+            float operationProgresValue = operation.progress;
             await Task.Yield();
         }
     }

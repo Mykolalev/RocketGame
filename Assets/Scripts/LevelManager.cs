@@ -2,12 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
+using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Button[] _levels;
+    [SerializeField] private Slider _slider;
+    [SerializeField] private GameObject _menuPanel; 
+    [SerializeField] private GameObject _loadPanel;
 
-    private const string LevelsPrefsName = "Levels";
+    private string LevelPrefsName = PrefsContainer.LevelPrefsName;
 
     public static LevelManager Instance;
     public int LevelUnlock;
@@ -26,7 +30,8 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        LevelUnlock = PlayerPrefs.GetInt(LevelsPrefsName, 1);
+        Debug.Log(PlayerPrefs.GetInt(LevelPrefsName));
+        LevelUnlock = PlayerPrefs.GetInt(LevelPrefsName, 1);
 
         for (int i = 0; i < _levels.Length; i++)
         {
@@ -39,13 +44,23 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public async Task LoadLevelAsync(int levelIndex) 
+    public void LoadLevelButton(int index) 
+    {
+        _menuPanel.SetActive(false); 
+        _loadPanel.SetActive(true);
+
+        StartCoroutine(LoadLevel(index));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
 
-        while (!operation.isDone)
+        while (!operation.isDone)  
         {
-            await Task.Yield();
+            float operationProgressValue = operation.progress;
+            _slider.value = operationProgressValue;
+            yield return null;
         }
     }
 }

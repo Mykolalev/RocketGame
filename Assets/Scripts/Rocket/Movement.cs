@@ -25,7 +25,6 @@ public class Movement : MonoBehaviour
     {
         ProcessThrust();
         //ProcessRotation();
-        Debug.Log($"Now turning direction is {_turningDirection}");
     }
 
     private void FixedUpdate()

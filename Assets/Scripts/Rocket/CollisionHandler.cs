@@ -5,7 +5,6 @@ using UnityEngine;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _crashParticles;
-    [SerializeField] private ParticleSystem _winParticles;
     [SerializeField] private ParticleSystem _collectAnItemParticles;
 
     public event Action Dead;
@@ -16,7 +15,6 @@ public class CollisionHandler : MonoBehaviour
     {
         if (collision.collider.GetComponent<Finish>())
         {
-            _winParticles.Play();
             Finished?.Invoke();
             DisableMovement();
             LevelOpener.UnlockLevel();
@@ -34,7 +32,6 @@ public class CollisionHandler : MonoBehaviour
     {
         if (other.GetComponent<Item>())
         {
-            Debug.Log("Hit the barrel");
             _collectAnItemParticles.Play();
             GotAnItem?.Invoke();
         }
