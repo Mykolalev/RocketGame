@@ -2,14 +2,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class LevelOpener
-{
+{ 
+    private static string _levelPrefs = PrefsContainer.LevelPrefName;
+
     public static void UnlockLevel()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentLevel >= PlayerPrefs.GetInt("levels"))
+        if (currentLevel >= PlayerPrefs.GetInt(_levelPrefs))
         {
-            PlayerPrefs.SetInt("levels", currentLevel + 1);
+            PlayerPrefs.SetInt(_levelPrefs, currentLevel + 1);
         }
     }
 }

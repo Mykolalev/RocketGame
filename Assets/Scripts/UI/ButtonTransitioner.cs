@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class ButtonTransitioner : MonoBehaviour
 {
-    [SerializeField] private GameObject _itsMenu;
-    [SerializeField] private GameObject _menuToEnable;
-    [SerializeField] private Button _buttonTransitioner;
+    [SerializeField] private CanvasGroup _itsMenu;
+    [SerializeField] private CanvasGroup _menuToEnable;
+    [SerializeField] private Button _buttonTransitioner; 
 
     private void Start()
     {
@@ -14,7 +14,21 @@ public class ButtonTransitioner : MonoBehaviour
 
     private void MakeTransition()
     {
-        _itsMenu.SetActive(false);
-        _menuToEnable.SetActive(true);
+        DisableItsCanvasGroup();
+        EnableAnotherCanvasGroup();
+    }
+
+    private void EnableAnotherCanvasGroup()
+    { 
+        _menuToEnable.alpha = 1;
+        _menuToEnable.interactable = true;
+        _menuToEnable.blocksRaycasts = true;
+    }
+
+    private void DisableItsCanvasGroup()
+    {
+        _itsMenu.alpha = 0;
+        _itsMenu.interactable = false;
+        _itsMenu.blocksRaycasts = false;
     }
 }

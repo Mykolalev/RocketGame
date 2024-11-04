@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour
+public class GameProcess : MonoBehaviour
 {
     [SerializeField] private CollisionHandler _collisionHandler;
 

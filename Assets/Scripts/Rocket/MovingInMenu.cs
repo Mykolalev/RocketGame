@@ -5,6 +5,7 @@ public class MovingInMenu : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _movingSpeed;
     [SerializeField] private float _positionOffset;
+
     private float _lerpTime;
     private Vector3 _upperPosition;
     private Vector3 _lowerPosition;

@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _finishParticles;
-    private string _levelPrefsName = PrefsContainer.LevelPrefsName;
+    private string _levelPrefsName = PrefsContainer.LevelPrefName;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -20,11 +19,6 @@ public class Finish : MonoBehaviour
 
     private void UnlockLevel()
     {
-        int currentLevel = SceneManager.GetActiveScene().buildIndex;
-
-        if (currentLevel >= PlayerPrefs.GetInt(_levelPrefsName))
-        {
-            PlayerPrefs.SetInt(_levelPrefsName, currentLevel + 1);
-        }
+        LevelOpener.UnlockLevel();
     }
 }
