@@ -18,7 +18,7 @@ public class MenuBootstrap : MonoBehaviour
             toggle.ToggleBootstrap();
         }
 
-        _bgMusic.Bootstrap();
+        _bgMusic.Bootstrap(); 
         _levelsBootstrapper.Init();
     }
 }

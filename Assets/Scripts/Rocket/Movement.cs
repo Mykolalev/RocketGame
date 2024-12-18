@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         ProcessThrust();
-        //ProcessRotation();
+        ProcessRotation();
     }
 
     private void FixedUpdate()
@@ -62,31 +62,31 @@ public class Movement : MonoBehaviour
     private void RocketRotation()
     {
         _rb.freezeRotation = true;
-        transform.rotation *= Quaternion.Euler(0, 0, _turningDirection * _turningSpeed * Time.deltaTime);
+        transform.rotation *= Quaternion.Euler(0, 0, -_turningDirection * _turningSpeed * Time.deltaTime);
         _rb.freezeRotation = false;
     }
 
-    public void OnTurnLeftButtonDown()
-    {
-        _turningDirection = 1;
-    }
+    //public void OnTurnLeftButtonDown()
+    //{
+    //    _turningDirection = 1;
+    //}
 
-    public void OnTurnRightButtonDown()
-    {
-        _turningDirection = -1;
-    }
+    //public void OnTurnRightButtonDown()
+    //{
+    //    _turningDirection = -1;
+    //}
 
-    public void OnTurnButtonUp()
-    {
-        _turningDirection = 0;
-    }
+    //public void OnTurnButtonUp()
+    //{
+    //    _turningDirection = 0;
+    //}
 
-    public void OnThrustButtonDown()
-    {
-        _canPush = true;
-    }
-    public void OnThrustButtonUp()
-    {
-        _canPush = false;
-    }
+    //public void OnThrustButtonDown()
+    //{
+    //    _canPush = true;
+    //}
+    //public void OnThrustButtonUp()
+    //{
+    //    _canPush = false;
+    //}
 }
